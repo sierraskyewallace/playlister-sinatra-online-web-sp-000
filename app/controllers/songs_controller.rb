@@ -8,6 +8,7 @@ class SongsController < Sinatra::Base
   set :session_secret, "my_application_secret"
   set :views, Proc.new { File.join(root, "../views/") }
 
+<<<<<<< HEAD
  get '/songs' do 
   @songs = Song.all 
   erb :'songs/index'
@@ -21,6 +22,19 @@ get '/songs/:slug' do
   @song = Song.find_by_slug(params[:slug])
   erb :'songs/show'
 end
+=======
+<<<<<<< HEAD
+ # get songs - show songs 
+=======
+
+  get '/songs' do
+    @songs = Song.all
+    erb :'songs/index'
+  end
+>>>>>>> 4e30d500761fa88f35f5b067585905d48e883d29
+
+ # get songs/new - shows all artists and genres 
+>>>>>>> 68c8662efcaf94a48fc879b22e6f984c991c02fb
 
 post '/songs' do
   @song = Song.create(params[:song])
